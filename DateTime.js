@@ -344,7 +344,12 @@ var Datetime = React.createClass({
 
 	localMoment: function( date, format ){
 		var momentFn = this.props.utc ? moment.utc : moment;
-		var m = momentFn( date, format, this.props.strictParsing );
+    var m;
+    if (this.props.timezone) {
+      m = momentFn.tz(date, this.props.timezone, format);
+    } else {
+      m = momentFn( date, format, this.props.strictParsing );
+    }
 		if ( this.props.locale )
 			m.locale( this.props.locale );
 		return m;
