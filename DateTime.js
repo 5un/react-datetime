@@ -28,6 +28,7 @@ var Datetime = React.createClass({
 		onChange: TYPES.func,
 		locale: TYPES.string,
 		utc: TYPES.bool,
+		timezone: TYPES.string,
 		input: TYPES.bool,
 		// dateFormat: TYPES.string | TYPES.bool,
 		// timeFormat: TYPES.string | TYPES.bool,
